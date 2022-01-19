@@ -9,7 +9,7 @@ const getApiInfo = async () => {
     let id = 1
     let AllPromises = []
 
-    while(id <= 10){
+    while(id <= 160){
         AllPromises.push(axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`))
         id++
     }
@@ -31,6 +31,7 @@ const getApiInfo = async () => {
             })
             return pokeArray
         })
+    
        return getAllApiPokemons
 }
 

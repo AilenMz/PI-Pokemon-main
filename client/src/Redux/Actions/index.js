@@ -12,6 +12,7 @@ export const getAllPokemons = () => {
         })
     } 
 }
+
 // ver como hacer con promesa
 
 // export function getAllPokemons() {

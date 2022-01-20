@@ -8,7 +8,7 @@ const getApiInfo = async () => {
     let id = 1
     let AllPromises = []
 
-    while(id <= 200){
+    while(id <= 2){
         AllPromises.push(axios.get(`https://pokeapi.co/api/v2/pokemon/${id}`))
         id++
     }
@@ -26,7 +26,8 @@ const getApiInfo = async () => {
                 speed: e.data.stats[5].base_stat,
                 height: e.data.height,
                 weight: e.data.weight,
-                img: e.data.sprites.other.dream_world.front_default
+                img: e.data.sprites.other.dream_world.front_default,
+                type: e.data.types.map(el => el.type.name)
             }
         })
         console.log(pokeArray)
@@ -36,4 +37,4 @@ const getApiInfo = async () => {
           
 }
 
-//getApiInfo()
+getApiInfo()

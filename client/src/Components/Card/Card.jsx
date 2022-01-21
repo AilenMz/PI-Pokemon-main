@@ -1,7 +1,7 @@
 import React from 'react'
 import StyledCard from './StyledCard'
 
-export default function Card({name, img, type}){
+export default function Card({name, img, type, attack}){
     return (
         <StyledCard>
            <h1>{name}</h1>
@@ -11,6 +11,7 @@ export default function Card({name, img, type}){
                })
            }
            <img src={img} alt="img not found" />
+           <h4>{`Attack: ${attack}`}</h4>
         </StyledCard>
     )
 }

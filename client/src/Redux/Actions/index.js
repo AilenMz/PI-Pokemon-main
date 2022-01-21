@@ -2,6 +2,7 @@ import axios from 'axios'
 
 export const GET_ALL_POKEMONS = 'GET_ALL_POKEMONS';
 export const GET_ALL_TYPES = 'GET_ALL_TYPES'
+export const SORT_BY_STRENGTH = 'SORT_BY_STRENGTH'
 
 //---------------------------//
 
@@ -32,4 +33,11 @@ export const getAllTypes = () => {
             type: GET_ALL_TYPES, payload: json.data
         })
     } 
+}
+
+export const sortByStrength = (payload) => {
+    return {
+        type: SORT_BY_STRENGTH,
+        payload
+    }
 }

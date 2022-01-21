@@ -2,7 +2,8 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import LangindPage from './Components/LandingPage/landingPage.jsx'
 import Home from './Components/Home/Home.jsx'
-//import Prueba from './Components/PRUEBA/prueba.jsx'
+
+
 
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
         
         <Route exact path= '/' component={LangindPage}/>
         <Route exact path= '/home' component={Home}/>
+
+      
         
 
         </Switch>

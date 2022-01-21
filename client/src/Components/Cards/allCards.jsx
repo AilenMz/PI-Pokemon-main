@@ -1,11 +1,12 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector} from "react-redux";
 import { getAllPokemons } from "../../Redux/Actions/index.js";
 
 //components
 import Card from "../Card/Card.jsx";
 import Paginado from "../paginated/paginado.jsx";
+import StyledCards from './StyledCards.jsx'
 
 export default function AllCards() {
   
@@ -13,9 +14,9 @@ export default function AllCards() {
   const dispatch = useDispatch(); // es lo mismo que hacer mapdispatch to props
 
   const [currentPage, setCurrentPAge] = useState(1);
-  const [pokemonsXpage] = useState(6);
+  const [pokemonsXpage] = useState(10);
 
-  let indexLastPokemon = currentPage * pokemonsXpage; //6
+  let indexLastPokemon = currentPage * pokemonsXpage; //12
   let indexFirstPokemon = indexLastPokemon - pokemonsXpage; //0
   let currentPokemons = allPokemons.slice(indexFirstPokemon, indexLastPokemon);
 
@@ -34,17 +35,18 @@ export default function AllCards() {
         allPokemons={allPokemons.length}
         paginado={paginado}
       />
-      <div>
+      <StyledCards>
         {currentPokemons?.map((el) => {
           return (
             <Card 
               key={el.id} 
               name={el.name} 
               img={el.img} 
-              type={el.type} />
+              type={el.type}
+              attack={el.attack} />
           );
         })}
-      </div>
+      </StyledCards>
     </div>
   );
 }

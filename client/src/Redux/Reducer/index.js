@@ -1,4 +1,4 @@
-import {GET_ALL_POKEMONS, GET_ALL_TYPES} from '../Actions/index.js'
+import {GET_ALL_POKEMONS, GET_ALL_TYPES, SORT_BY_STRENGTH} from '../Actions/index.js'
 
 const initialState = {
     pokemons: [],
@@ -18,7 +18,14 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 types: action.payload
             }
-    
+        case SORT_BY_STRENGTH:
+            let sortSTR = action.payload === 'asc' ? 
+                state.pokemons.sort((a, b) => a.attack - b.attack) 
+                : state.pokemons.sort((a, b) => b.attack -a.attack)
+            return {
+                ...state,
+                pokemons: sortSTR
+            }
         default:
             return state;
     }

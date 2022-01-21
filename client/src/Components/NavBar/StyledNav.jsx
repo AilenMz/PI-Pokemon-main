@@ -36,7 +36,7 @@ const StyledNav = styled.nav`
         font-weight: bold;
         text-align: center;
         &:hover{
-            font-size: 21px;
+            color: ${allColors.mainColor};
         }
     }
 `

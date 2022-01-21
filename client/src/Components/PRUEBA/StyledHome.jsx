@@ -5,3 +5,6 @@ export const StyledHome = styled.div`
     flex-direction: row;
     justify-content: space-around;
 `
+
+
+

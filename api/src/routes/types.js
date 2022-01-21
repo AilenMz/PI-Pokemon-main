@@ -20,7 +20,7 @@ router.get('/types', async (req, res) =>{
             })
         });
         const AllTypes = await Types.findAll()
-        res.send(AllTypes)
+        res.json(AllTypes)
     });
 
 module.exports = router;

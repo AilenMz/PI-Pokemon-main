@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 export const GET_ALL_POKEMONS = 'GET_ALL_POKEMONS';
+export const GET_ALL_TYPES = 'GET_ALL_TYPES'
 
 //---------------------------//
 
@@ -23,3 +24,12 @@ export const getAllPokemons = () => {
 //         });
 //     };
 //   }
+
+export const getAllTypes = () => {
+    return async function (dispatch) {
+        let json = await axios(`http://localhost:3001/types`)
+        return dispatch({
+            type: GET_ALL_TYPES, payload: json.data
+        })
+    } 
+}

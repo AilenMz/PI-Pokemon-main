@@ -1,19 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect} from "react";
-import { getAllTypes} from "../../Redux/Actions/index.js";
 import { StyledFilter } from "./StyledFilters.jsx";
 
-export default function Filters() {
-
-
-  
-  const allTypes = useSelector((state) => state.types); // es lo mismo que hacer mapSatetoProps
-  const dispatch = useDispatch(); // es lo mismo que hacer mapdispatch to props
-
-  useEffect(() => {
-    dispatch(getAllTypes());
-  }, [dispatch]);
+export default function Filters({allTypes}) {
 
 
 

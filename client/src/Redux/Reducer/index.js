@@ -1,7 +1,8 @@
-import {GET_ALL_POKEMONS, GET_ALL_TYPES, SORT_BY_STRENGTH} from '../Actions/index.js'
+import {GET_ALL_POKEMONS, GET_ALL_TYPES, SORT_BY_STRENGTH, FILTER_BY_ORIGIN} from '../Actions/index.js'
 
 const initialState = {
     pokemons: [],
+    pokemonsBack: [],
     types:[],
     pokemon: {},
 };
@@ -11,7 +12,8 @@ const rootReducer = (state = initialState, action) => {
         case GET_ALL_POKEMONS:
             return {
                 ...state,
-                pokemons: action.payload
+                pokemons: action.payload,
+                pokemonsBack:action.payload
             }
         case GET_ALL_TYPES:
             return {
@@ -25,6 +27,14 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 pokemons: sortSTR
+            }
+        case FILTER_BY_ORIGIN:
+            const allPokemons = state.pokemonsBack
+            const constFilter = action.payload === 'Database'
+            ? allPokemons.filter(el => el.createdInDb) : allPokemons.filter(el => !el.createdInDb)
+            return {
+                ...state,
+                pokemons: constFilter
             }
         default:
             return state;

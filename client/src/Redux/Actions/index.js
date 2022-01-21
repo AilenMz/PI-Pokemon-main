@@ -3,6 +3,7 @@ import axios from 'axios'
 export const GET_ALL_POKEMONS = 'GET_ALL_POKEMONS';
 export const GET_ALL_TYPES = 'GET_ALL_TYPES'
 export const SORT_BY_STRENGTH = 'SORT_BY_STRENGTH'
+export const FILTER_BY_ORIGIN = 'FILTER_BY_ORIGIN'
 
 //---------------------------//
 
@@ -38,6 +39,14 @@ export const getAllTypes = () => {
 export const sortByStrength = (payload) => {
     return {
         type: SORT_BY_STRENGTH,
+        payload
+    }
+}
+
+export const filterByOrigin = (payload) => {
+    console.log(payload)
+    return {
+        type: FILTER_BY_ORIGIN,
         payload
     }
 }

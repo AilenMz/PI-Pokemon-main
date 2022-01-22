@@ -1,6 +1,7 @@
 const { Router } = require('express');
 const {getAllPokemons} = require('./utils/getFunctions.js')
-const {Pokemon, Types} = require('../db.js')
+const {Pokemon, Types} = require('../db.js');
+const e = require('express');
 
 
 const router = Router();
@@ -50,8 +51,11 @@ router.post('/pokemons', async (req, res) => {
     let typeinDB = await Types.findAll({
         where: {name: type}
     })
+
+    // let map = typeinDB.map(e => e.dataValues.name)
+    // console.log(map)
     
-    charactedCreated.addTypes(typeinDB)
+    charactedCreated.addType(typeinDB)
     res.send('personaje creado con exito')
 })
 

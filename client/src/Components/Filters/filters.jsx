@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledFilter } from "./StyledFilters.jsx";
 
-export default function Filters({allTypes}) {
+export default function Filters({allTypes, handleOrigin}) {
 
 
 
@@ -25,7 +25,7 @@ export default function Filters({allTypes}) {
         </select>
 
         <label>origen</label>
-        <select>
+        <select onChange={(e) => handleOrigin(e)}>
           <option value="all">All</option>
           <option value="pokeapi">Pokeapi</option>
           <option value="database">Database</option>
@@ -35,7 +35,7 @@ export default function Filters({allTypes}) {
         <select>
           <option value="All">All</option>
           {allTypes?.map((el) => {
-            return <option value={el.name}>{el.name}</option>;
+            return <option key={el.id} value={el.name}>{el.name}</option>;
           })}
         </select>
       </div>

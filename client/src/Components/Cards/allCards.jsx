@@ -22,7 +22,7 @@ export default function AllCards({pokemonsXpage, allPokemons, paginado, currentP
               key={el.id} 
               name={el.name} 
               img={el.img} 
-              type={el.type}
+              type={el.type ? el.type : el.types.map(el => el.name)}
               attack={el.attack} />
           );
         })}

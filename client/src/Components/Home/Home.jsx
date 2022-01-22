@@ -34,6 +34,10 @@ export default function Home() {
     dispatch(getAllTypes());
   }, [dispatch]);
 
+  const handleOrigin = (e) => {
+    dispatch(filterByOrigin(e.target.value))
+  }
+
 
   return (
     <>
@@ -46,7 +50,8 @@ export default function Home() {
         currentPokemons = {currentPokemons}
         />
         <Filters
-        allTypes={allTypes}/>
+        allTypes={allTypes}
+        handleOrigin={handleOrigin}/>
       </StyledHome>
     </>
   );

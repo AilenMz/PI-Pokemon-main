@@ -30,7 +30,7 @@ const rootReducer = (state = initialState, action) => {
             }
         case FILTER_BY_ORIGIN:
             const allPokemons = state.pokemonsBack
-            const constFilter = action.payload === 'Database'
+            const constFilter = action.payload === 'database'
             ? allPokemons.filter(el => el.createdInDb) : allPokemons.filter(el => !el.createdInDb)
             return {
                 ...state,

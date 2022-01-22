@@ -4,6 +4,8 @@ export const GET_ALL_POKEMONS = 'GET_ALL_POKEMONS';
 export const GET_ALL_TYPES = 'GET_ALL_TYPES'
 export const SORT_BY_STRENGTH = 'SORT_BY_STRENGTH'
 export const FILTER_BY_ORIGIN = 'FILTER_BY_ORIGIN'
+export const FILTER_BY_TYPE = 'FILTER_BY_TYPE'
+export const SORT_BY_ABC = 'SORT_BY_ABC'
 
 //---------------------------//
 
@@ -46,6 +48,28 @@ export const sortByStrength = (payload) => {
 export const filterByOrigin = (payload) => {
     return {
         type: FILTER_BY_ORIGIN,
+        payload
+    }
+}
+
+export const filterByType = (payload) => {
+    return {
+        type: FILTER_BY_TYPE,
+        payload
+    }
+}
+
+// export const sortByABC = (query) => {
+//     return async function (dispatch) {
+//         let json = await axios(`http://localhost:3001/orden?orden=${query}`)
+//         return dispatch({
+//             type: SORT_BY_ABC, payload: json.data
+//         })
+//     } 
+// }
+export const sortByABC = (payload) => {
+    return {
+        type: SORT_BY_ABC,
         payload
     }
 }

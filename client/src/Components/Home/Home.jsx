@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector} from "react-redux";
 import { useEffect, useState } from "react";
-import {getAllPokemons, getAllTypes, filterByOrigin} from '../../Redux/Actions/index.js'
+import {getAllPokemons, getAllTypes, filterByOrigin, sortByStrength, filterByType, sortByABC} from '../../Redux/Actions/index.js'
 
 //---------------------
 import NavBar from "../NavBar/NavBar.jsx";
@@ -17,6 +17,7 @@ export default function Home() {
 
   const [currentPage, setCurrentPAge] = useState(1);
   const [pokemonsXpage] = useState(10);
+  const [orden, setOrden] = useState('')
 
   let indexLastPokemon = currentPage * pokemonsXpage; //12
   let indexFirstPokemon = indexLastPokemon - pokemonsXpage; //0
@@ -38,6 +39,24 @@ export default function Home() {
     dispatch(filterByOrigin(e.target.value))
   }
 
+  const handleSortBySTR = (e) => {
+    e.preventDefault()
+    dispatch(sortByStrength(e.target.value))
+    setCurrentPAge(1)
+    setOrden(`Ordenado ${e.target.value}`)
+  }
+
+  const handleFilterType = (e) => {
+    dispatch(filterByType(e.target.value))
+  }
+
+  const handleSortByABC = (e) => {
+    e.preventDefault()
+    dispatch(sortByABC(e.target.value))
+    setCurrentPAge(1)
+    setOrden(`Ordenado ${e.target.value}`)
+  }
+
 
   return (
     <>
@@ -51,7 +70,10 @@ export default function Home() {
         />
         <Filters
         allTypes={allTypes}
-        handleOrigin={handleOrigin}/>
+        handleOrigin={handleOrigin}
+        handleSortBySTR={handleSortBySTR}
+        handleFilterType={handleFilterType}
+        handleSortByABC={handleSortByABC}/>
       </StyledHome>
     </>
   );

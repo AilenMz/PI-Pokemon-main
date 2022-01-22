@@ -1,7 +1,7 @@
 import React from "react";
 import { StyledFilter } from "./StyledFilters.jsx";
 
-export default function Filters({allTypes, handleOrigin}) {
+export default function Filters({allTypes, handleOrigin, handleSortBySTR, handleFilterType, handleSortByABC}) {
 
 
 
@@ -11,17 +11,19 @@ export default function Filters({allTypes, handleOrigin}) {
       <div className="filters">
 
         <label>alfabetico</label>
-        <select>
+        <select onChange={(e) => handleSortByABC(e)}>
           {/* orden alfabetico */}
-          <option value="asc">A to Z</option>
-          <option value="desc">Z to A</option>
+          <option value="NONE">none</option>
+          <option value="ASC">A to Z</option>
+          <option value="DESC">Z to A</option>
         </select>
 
         <label>fuerza</label>
-        <select>
+        <select onChange={(e) => handleSortBySTR(e)}>
           {/* fuerza */}
-          <option value="asc">ASC</option>
-          <option value="desc">DESC</option>
+          <option value="none">None</option>
+          <option value="asc">Asc</option>
+          <option value="desc">Desc</option>
         </select>
 
         <label>origen</label>
@@ -32,8 +34,8 @@ export default function Filters({allTypes, handleOrigin}) {
         </select>
         
         <label>tipo</label>
-        <select>
-          <option value="All">All</option>
+        <select onChange={(e) => handleFilterType(e)}>
+          <option value="all">All</option>
           {allTypes?.map((el) => {
             return <option key={el.id} value={el.name}>{el.name}</option>;
           })}

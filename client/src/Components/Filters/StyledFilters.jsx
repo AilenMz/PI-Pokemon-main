@@ -3,8 +3,9 @@ import allColors from '../../colorsPalette/colors.js'
 
 export const StyledFilter = styled.div`
     width: auto;
-    max-height: 400px;
+    max-height: 450px;
     margin-top: 70px;
+    margin-right: 5px;
     background-color: ${allColors.colors[0]};
     padding: 30px;
     border-radius: 10px;
@@ -28,4 +29,32 @@ export const StyledFilter = styled.div`
             border-radius: 5px;
         }
     }
+    .link{
+        color: white;
+        text-decoration: none;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: bold;
+        text-align: center;
+        &:hover{
+            color: ${allColors.mainColor};
+        }
+    }
+    button{
+    background: rgba(44, 44, 44, 0.473);
+    border: 2px solid ${allColors.mainColor};
+    color: ${allColors.mainColor};
+    text-align: center;
+    height: 35px;
+    width: 80px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 10px;
+
+    &:hover{
+        border: 2px solid white;
+        color: white;
+    }
+}
 `

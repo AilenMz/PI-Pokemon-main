@@ -1,5 +1,6 @@
 import React from "react";
 import { StyledFilter } from "./StyledFilters.jsx";
+import { Link } from "react-router-dom";
 
 export default function Filters({allTypes, handleOrigin, handleSortBySTR, handleFilterType, handleSortByABC}) {
 
@@ -42,6 +43,8 @@ export default function Filters({allTypes, handleOrigin, handleSortBySTR, handle
         </select>
       </div>
       <button>Reset</button>
+      <hr />
+      <Link to="/character" className="link">CREAR POKEMON</Link>
     </StyledFilter>
   );
 }

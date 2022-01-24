@@ -23,4 +23,6 @@ router.get('/types', async (req, res) =>{
         res.json(AllTypes)
     });
 
+    
+
 module.exports = router;

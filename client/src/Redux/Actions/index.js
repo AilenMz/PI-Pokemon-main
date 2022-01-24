@@ -6,6 +6,7 @@ export const SORT_BY_STRENGTH = 'SORT_BY_STRENGTH'
 export const FILTER_BY_ORIGIN = 'FILTER_BY_ORIGIN'
 export const FILTER_BY_TYPE = 'FILTER_BY_TYPE'
 export const SORT_BY_ABC = 'SORT_BY_ABC'
+export const GET_POKEMON = 'GET_POKEMON'
 
 //---------------------------//
 
@@ -72,4 +73,17 @@ export const sortByABC = (payload) => {
         type: SORT_BY_ABC,
         payload
     }
+}
+
+export const getPokemon = (name) => {
+    return async function (dispatch) {
+        try {
+            let json = await axios(`http://localhost:3001/pokemons?name=${name}`)
+            return dispatch({
+            type: GET_POKEMON, payload: json.data
+        })
+        } catch (error) {
+            console.log(error)
+        } 
+    } 
 }

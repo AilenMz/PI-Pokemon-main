@@ -28,16 +28,5 @@ const StyledNav = styled.nav`
         margin-right: 1000px;
     }
 
-    .link{
-        color: white;
-        text-decoration: none;
-        cursor: pointer;
-        font-size: 20px;
-        font-weight: bold;
-        text-align: center;
-        &:hover{
-            color: ${allColors.mainColor};
-        }
-    }
 `
 export default StyledNav

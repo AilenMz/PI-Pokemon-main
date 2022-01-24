@@ -7,18 +7,18 @@ export default function Filters({allTypes, handleOrigin, handleSortBySTR, handle
 
   return (
     <StyledFilter>
-      <button>Volver a cargar todos los Pokemons</button>
+      <h3>Filters</h3>
       <div className="filters">
 
-        <label>alfabetico</label>
+        <label>by alphabetical order</label>
         <select onChange={(e) => handleSortByABC(e)}>
-          {/* orden alfabetico */}
+        {/* <option selected disabled>alfabetical</option> */}
           <option value="NONE">none</option>
           <option value="ASC">A to Z</option>
           <option value="DESC">Z to A</option>
         </select>
 
-        <label>fuerza</label>
+        <label>by strength</label>
         <select onChange={(e) => handleSortBySTR(e)}>
           {/* fuerza */}
           <option value="none">None</option>
@@ -26,14 +26,14 @@ export default function Filters({allTypes, handleOrigin, handleSortBySTR, handle
           <option value="desc">Desc</option>
         </select>
 
-        <label>origen</label>
+        <label>by origin</label>
         <select onChange={(e) => handleOrigin(e)}>
           <option value="all">All</option>
           <option value="pokeapi">Pokeapi</option>
           <option value="database">Database</option>
         </select>
         
-        <label>tipo</label>
+        <label>by type</label>
         <select onChange={(e) => handleFilterType(e)}>
           <option value="all">All</option>
           {allTypes?.map((el) => {
@@ -41,6 +41,7 @@ export default function Filters({allTypes, handleOrigin, handleSortBySTR, handle
           })}
         </select>
       </div>
+      <button>Reset</button>
     </StyledFilter>
   );
 }

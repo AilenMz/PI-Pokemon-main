@@ -16,7 +16,7 @@ export default function Home() {
   const dispatch = useDispatch(); // es lo mismo que hacer mapdispatch to props
 
   const [currentPage, setCurrentPAge] = useState(1);
-  const [pokemonsXpage] = useState(10);
+  const [pokemonsXpage] = useState(12);
   const [orden, setOrden] = useState('')
 
   let indexLastPokemon = currentPage * pokemonsXpage; //12
@@ -67,6 +67,8 @@ export default function Home() {
         allPokemons={allPokemons}
         paginado={paginado}
         currentPokemons = {currentPokemons}
+        currentPage={currentPage}
+        setCurrentPAge={setCurrentPAge}
         />
         <Filters
         allTypes={allTypes}

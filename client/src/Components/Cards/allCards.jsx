@@ -5,16 +5,19 @@ import Card from "../Card/Card.jsx";
 import Paginado from "../paginated/paginado.jsx";
 import StyledCards from './StyledCards.jsx'
 
-export default function AllCards({pokemonsXpage, allPokemons, paginado, currentPokemons}) {
+export default function AllCards({pokemonsXpage, allPokemons, paginado, currentPokemons, setCurrentPAge,currentPage}) {
   
 
   return (
-    <div>
+    <div className="box">
       <Paginado
         pokemonsXpage={pokemonsXpage}
         allPokemons={allPokemons.length}
         paginado={paginado}
+        currentPage={currentPage}
+        setCurrentPAge={setCurrentPAge}
       />
+      <h3>{`page n° ${currentPage}`}</h3>
       <StyledCards>
         {currentPokemons?.map((el) => {
           return (

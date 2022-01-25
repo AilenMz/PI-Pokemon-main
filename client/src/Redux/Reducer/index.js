@@ -5,7 +5,8 @@ import {
   FILTER_BY_ORIGIN,
   FILTER_BY_TYPE,
   SORT_BY_ABC,
-  GET_POKEMON
+  GET_POKEMON,
+  POST_POKEMON
 } from "../Actions/index.js";
 
 const initialState = {
@@ -32,6 +33,10 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         pokemons: action.payload,
+      };
+    case POST_POKEMON:
+      return {
+        ...state,
       };
     case SORT_BY_STRENGTH:
       const all = state.pokemonsBack;

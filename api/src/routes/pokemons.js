@@ -25,8 +25,10 @@ router.get("/pokemons", async (req, res) => {
 router.get("/pokemons/:id", async (req, res) => {
   const { id } = req.params;
 
-  const Total = await getAllPokemons();
+  //const Total = await getAllPokemons();
 
+  const Total = await getAllPokemons()
+  
   if (id) {
     let pokemonID = Total.filter((e) => e.id == id);
     pokemonID.length

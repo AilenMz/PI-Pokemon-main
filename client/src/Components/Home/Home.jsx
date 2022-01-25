@@ -57,6 +57,11 @@ export default function Home() {
     setOrden(`Ordenado ${e.target.value}`)
   }
 
+  function handleReset(e){
+    e.preventDefault()
+    dispatch(getAllPokemons())
+  }
+
 
   return (
     <>
@@ -72,6 +77,7 @@ export default function Home() {
         />
         <Filters
         allTypes={allTypes}
+        handleReset={handleReset}
         handleOrigin={handleOrigin}
         handleSortBySTR={handleSortBySTR}
         handleFilterType={handleFilterType}

@@ -2,7 +2,8 @@ import React from "react";
 import { StyledFilter } from "./StyledFilters.jsx";
 import { Link } from "react-router-dom";
 
-export default function Filters({allTypes, handleOrigin, handleSortBySTR, handleFilterType, handleSortByABC}) {
+
+export default function Filters({allTypes, handleReset, handleOrigin, handleSortBySTR, handleFilterType, handleSortByABC}) {
 
 
 
@@ -42,7 +43,7 @@ export default function Filters({allTypes, handleOrigin, handleSortBySTR, handle
           })}
         </select>
       </div>
-      <button>Reset</button>
+      <button onClick={(e)=>handleReset(e)}>Reset</button>
       <hr />
       <Link to="/pokemon" className="link">CREAR POKEMON</Link>
     </StyledFilter>

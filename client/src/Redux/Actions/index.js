@@ -7,6 +7,7 @@ export const FILTER_BY_ORIGIN = 'FILTER_BY_ORIGIN'
 export const FILTER_BY_TYPE = 'FILTER_BY_TYPE'
 export const SORT_BY_ABC = 'SORT_BY_ABC'
 export const GET_POKEMON = 'GET_POKEMON'
+export const POST_POKEMON = 'POST_POKEMON'
 
 //---------------------------//
 
@@ -85,5 +86,12 @@ export const getPokemon = (name) => {
         } catch (error) {
             console.log(error)
         } 
+    } 
+}
+export const postPokemon = (payload) => {
+    return async function (dispatch) {
+        let response = await axios.post(`http://localhost:3001/pokemons`, payload)
+        console.log(response)
+        return response
     } 
 }

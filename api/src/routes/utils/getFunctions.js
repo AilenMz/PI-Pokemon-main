@@ -24,8 +24,8 @@ const getApiInfo = async () => {
                     attack: e.data.stats[1].base_stat,
                     defense: e.data.stats[2].base_stat,
                     speed: e.data.stats[5].base_stat,
-                    height: e.data.height,
-                    weight: e.data.weight,
+                    height: e.data.height * 10, //la data viene en decimetros y lo paso a cm
+                    weight: e.data.weight * 0.1, // la data viene en hectogramos y la paso a kg
                     type: e.data.types.map(el => el.type.name),
                     img: e.data.sprites.other.dream_world.front_default
                 }

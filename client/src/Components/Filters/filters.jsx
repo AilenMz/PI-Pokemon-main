@@ -44,7 +44,7 @@ export default function Filters({allTypes, handleOrigin, handleSortBySTR, handle
       </div>
       <button>Reset</button>
       <hr />
-      <Link to="/character" className="link">CREAR POKEMON</Link>
+      <Link to="/pokemon" className="link">CREAR POKEMON</Link>
     </StyledFilter>
   );
 }

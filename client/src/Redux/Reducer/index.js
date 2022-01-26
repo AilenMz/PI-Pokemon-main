@@ -6,14 +6,15 @@ import {
   FILTER_BY_TYPE,
   SORT_BY_ABC,
   GET_POKEMON,
-  POST_POKEMON
+  POST_POKEMON,
+  GET_DETAIL
 } from "../Actions/index.js";
 
 const initialState = {
   pokemons: [],
   pokemonsBack: [],
   types: [],
-  pokemon: {},
+  pokemonDetails: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -38,6 +39,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
       };
+    case GET_DETAIL:
+      return{
+        ...state,
+        pokemonDetails: action.payload
+      }
     case SORT_BY_STRENGTH:
       const all = state.pokemonsBack;
       let sortSTR =

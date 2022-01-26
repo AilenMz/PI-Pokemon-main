@@ -22,7 +22,8 @@ export default function AllCards({pokemonsXpage, allPokemons, paginado, currentP
         {currentPokemons?.map((el) => {
           return (
             <Card 
-              key={el.id} 
+              key={el.id}
+              id={el.id} 
               name={el.name} 
               img={el.img} 
               type={el.type ? el.type : el.types.map(el => el.name)}

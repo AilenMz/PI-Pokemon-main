@@ -8,6 +8,8 @@ export const FILTER_BY_TYPE = 'FILTER_BY_TYPE'
 export const SORT_BY_ABC = 'SORT_BY_ABC'
 export const GET_POKEMON = 'GET_POKEMON'
 export const POST_POKEMON = 'POST_POKEMON'
+export const GET_DETAIL = 'GET_DETAIL'
+
 
 //---------------------------//
 
@@ -95,3 +97,18 @@ export const postPokemon = (payload) => {
         return response
     } 
 }
+
+export const getDetail = (id) => {
+    return async function (dispatch) {
+        try {
+            let json = await axios(`http://localhost:3001/pokemons/${id}`)
+        return dispatch({
+            type: GET_DETAIL, payload: json.data
+        })
+        } catch (error) {
+            console.log(error)
+        }
+        
+    } 
+}
+    

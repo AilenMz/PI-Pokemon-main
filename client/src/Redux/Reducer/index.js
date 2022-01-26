@@ -72,8 +72,7 @@ const rootReducer = (state = initialState, action) => {
           : allPokemons2.filter((el) =>
               el.type
                 ? el.type[0] === action.payload || el.type[1] === action.payload
-                : el.types[0].name === action.payload ||
-                  el.types[1].name === action.payload
+                : el.types[0].name === action.payload || el.types[1].name === action.payload
             );
       return {
         ...state,

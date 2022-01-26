@@ -20,6 +20,10 @@ const StyledCrate = styled.div`
         margin-right: 5px;
         visibility: hidden;
     }
+    .error{
+        color: red;
+        font-size: 10px;
+    }
 
 `
 export default StyledCrate

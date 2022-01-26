@@ -8,9 +8,10 @@ export default function Detail(props){
 
     useEffect(()=>{
         dispatch(getDetail(props.match.params.id))
-    },[dispatch, props])
+    },[dispatch,props.match.params.id])
 
     const pokeDetail = useSelector((state) => state.pokemonDetails)
+    console.log(pokeDetail)
 
 
  return(

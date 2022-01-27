@@ -32,7 +32,7 @@ router.get("/pokemons/:id", async (req, res) => {
   if (id) {
     let pokemonID = Total.filter((e) => e.id == id);
     pokemonID.length
-      ? res.status(200).json(pokemonID)
+      ? res.status(200).json(pokemonID[0])
       : res.status(404).send("Character not found");
   }
 });

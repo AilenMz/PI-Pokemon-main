@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import img from '../../img/createIMG.jpg'
+import allColors from '../../colorsPalette/colors'
 
 const StyledCrate = styled.div`
     background-image: url(${img});
@@ -12,8 +13,15 @@ const StyledCrate = styled.div`
 
     form{
         position: relative;
-        top: 60px;
-        left: 500px;
+        top: 20px;
+        left: 900px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        border-radius: 10px;
+        background: linear-gradient(0deg, rgba(239,62,51,0.7570378493194152) 67%, rgba(21,43,98,0.7766456924566701) 100%);
+        width: 600px;
+        height: 500px;
+        color: white;
     }
     h1{
         width: 294px;
@@ -24,6 +32,75 @@ const StyledCrate = styled.div`
         color: red;
         font-size: 10px;
     }
+    .inputs{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
 
+        .inputIMG{
+            width: 400px;
+        }
+
+        input{
+            width: 200px;
+        }
+    }
+    .barras{
+        display: grid;
+        grid-template-columns: auto auto;
+        margin-bottom: 10px;
+    }
+    .tam{
+        display: grid;
+        grid-template-columns: auto auto;
+        margin: 10px;
+        
+        h6{
+            margin:0
+        }
+        input{
+            width: 50px;
+            text-align: center;
+            margin-top: 10px;
+        }
+    }
+    .types{
+        display: grid;
+        grid-template-columns: 100px 100px;
+        grid-template-rows: 40px;
+        margin:20px;
+        align-items: center;
+        justify-content: space-around;
+
+        .type2{
+            display: grid;
+            grid-template-columns: auto auto;
+            justify-content: center;
+
+            div{
+                background-color: ${allColors.colors[0]};
+                border-radius: 5px;
+                margin:10px;
+                padding: 7px;
+                width: 80px;
+                height: 30px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            button{
+                width: 17px;
+                height: 17px;
+                margin: 2px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+        }
+    }
 `
 export default StyledCrate

@@ -10,6 +10,8 @@ export default function Detail(props){
         dispatch(getDetail(props.match.params.id))
     },[dispatch,props.match.params.id])
 
+
+    
     const pokeDetail = useSelector((state) => state.pokemonDetails)
     console.log(pokeDetail)
 
@@ -17,19 +19,19 @@ export default function Detail(props){
  return(
     <div>
     {
-        pokeDetail.length > 0 ?
+        pokeDetail.id ?
             <>
-                    <h1>Nombre: {pokeDetail[0].name}</h1>
-                    <p>ID: {pokeDetail[0].id}</p>
+                    <h1>Nombre: {pokeDetail.name}</h1>
+                    <p>ID: {pokeDetail.id}</p>
                     <h3>Type</h3>
-                    <p>{pokeDetail[0].type ? pokeDetail[0].type.join(' ') : pokeDetail[0].types.map(e => e.name).join(' ') }</p>
-                    <h5>HP: {pokeDetail[0].hp}</h5>
-                    <h5>ATTACK: {pokeDetail[0].attack}</h5>
-                    <h5>DEFENSE: {pokeDetail[0].defense}</h5>
-                    <h5>SPEED: {pokeDetail[0].speed}</h5>
-                    <h5>Height: {pokeDetail[0].height}</h5>
-                    <h5>Weight: {pokeDetail[0].weight}</h5>
-                    <img src={pokeDetail[0].img} alt="" />
+                    <p>{pokeDetail.type ? pokeDetail.type.join(' ') : pokeDetail.types.map(e => e.name).join(' ') }</p>
+                    <h5>HP: {pokeDetail.hp}</h5>
+                    <h5>ATTACK: {pokeDetail.attack}</h5>
+                    <h5>DEFENSE: {pokeDetail.defense}</h5>
+                    <h5>SPEED: {pokeDetail.speed}</h5>
+                    <h5>Height: {pokeDetail.height}</h5>
+                    <h5>Weight: {pokeDetail.weight}</h5>
+                    <img src={pokeDetail.img} alt="" />
 
 
 

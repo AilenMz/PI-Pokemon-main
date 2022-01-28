@@ -117,8 +117,8 @@ export const StyledRange = styled.input`
   background: ${(props) =>
     `linear-gradient(to right, 
     ${allColors.colors[1]} 0%, 
-    ${allColors.colors[1]} ${props.value}%, 
-    #fff ${props.value}%, 
+    ${allColors.colors[1]} ${(props.value * 100)/(props.max)}%, 
+    #fff ${(props.value * 100)/(props.max)}%, 
     #fff 100%);`};
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
 

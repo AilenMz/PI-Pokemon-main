@@ -51,9 +51,9 @@ export default function CreatePokemon() {
   const [input, setInput] = useState({
     name: "",
     hp: 0,
-    attack: 0,
-    defense: 0,
-    speed: 0,
+    attack: 20,
+    defense: 20,
+    speed: 20,
     height: 0,
     weight: 0,
     img: "",
@@ -156,6 +156,8 @@ export default function CreatePokemon() {
                 value={input.hp}
                 name="hp"
                 className="barra"
+                min={0}
+                max={100}
               />
               {input.hp}
             </label>
@@ -184,8 +186,8 @@ export default function CreatePokemon() {
                 type="range"
                 value={input.defense}
                 name="defense"
-                min={30}
-                max={100}
+                min={20}
+                max={150}
               />{" "}
               {input.defense}
             </label>

@@ -25,15 +25,13 @@ router.get("/pokemons", async (req, res) => {
 router.get("/pokemons/:id", async (req, res) => {
   const { id } = req.params;
 
-  //const Total = await getAllPokemons();
-
   const Total = await getAllPokemons()
   
   if (id) {
     let pokemonID = Total.filter((e) => e.id == id);
     pokemonID.length
       ? res.status(200).json(pokemonID[0])
-      : res.status(404).send("Character not found");
+      : res.status(404).send("Character Not Found");
   }
 });
 

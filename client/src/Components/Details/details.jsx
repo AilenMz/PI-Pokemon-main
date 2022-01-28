@@ -10,8 +10,6 @@ export default function Detail(props){
         dispatch(getDetail(props.match.params.id))
     },[dispatch,props.match.params.id])
 
-
-    
     const pokeDetail = useSelector((state) => state.pokemonDetails)
     console.log(pokeDetail)
 

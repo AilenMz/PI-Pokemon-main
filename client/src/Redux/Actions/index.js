@@ -87,6 +87,9 @@ export const getPokemon = (name) => {
         })
         } catch (error) {
             console.log(error)
+            return dispatch({
+                type: GET_POKEMON, payload: [{msg: `${name} doesn't exists`}]
+            })
         } 
     } 
 }

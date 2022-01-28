@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import StyledCrate from "./StyledCreate.jsx";
+import StyledCrate, {StyledRange} from "./StyledCreate.jsx";
 import StyledNav from "../NavBar/StyledNav.jsx";
 import { Link, useHistory } from "react-router-dom";
 import { getAllTypes, postPokemon } from "../../Redux/Actions/index.js";
@@ -42,6 +42,7 @@ export default function CreatePokemon() {
   const allTypes = useSelector((state) => state.types);
   const dispatch = useDispatch();
   const history = useHistory();
+
 
   useEffect(() => {
     dispatch(getAllTypes());
@@ -145,16 +146,17 @@ export default function CreatePokemon() {
           </div>
           {errors.name && <p className="error">{errors.name}</p>}
         </div>
-        <div className="barras">
+        <div className="barrasContainer">
           <div>
             <label>Life: </label>
             <label>
-              <input
+              <StyledRange
                 onChange={handleChange}
                 type="range"
                 value={input.hp}
                 name="hp"
-              />{" "}
+                className="barra"
+              />
               {input.hp}
             </label>
           </div>
@@ -162,7 +164,7 @@ export default function CreatePokemon() {
           <div>
             <label>Strength: </label>
             <label>
-              <input
+              <StyledRange
                 onChange={handleChange}
                 type="range"
                 value={input.attack}
@@ -177,7 +179,7 @@ export default function CreatePokemon() {
           <div>
             <label>Defense: </label>
             <label>
-              <input
+              <StyledRange
                 onChange={handleChange}
                 type="range"
                 value={input.defense}
@@ -192,7 +194,7 @@ export default function CreatePokemon() {
           <div>
             <label>Speed: </label>
             <label>
-              <input
+              <StyledRange
                 onChange={handleChange}
                 type="range"
                 value={input.speed}

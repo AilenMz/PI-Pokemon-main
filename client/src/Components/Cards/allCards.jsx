@@ -21,6 +21,7 @@ export default function AllCards({pokemonsXpage, allPokemons, paginado, currentP
       <StyledCards>
         {currentPokemons?.map((el) => {
           return (
+            el.msg ? <Card key={1} msg={el.msg}/> :
             <Card 
               key={el.id}
               id={el.id} 

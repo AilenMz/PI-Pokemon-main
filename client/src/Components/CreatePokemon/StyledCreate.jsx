@@ -24,7 +24,7 @@ const StyledCrate = styled.div`
       rgba(21, 43, 98, 0.7766456924566701) 100%
     );
     width: 600px;
-    height: 500px;
+    height: 530px;
     color: white;
   }
   h1 {
@@ -40,15 +40,27 @@ const StyledCrate = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10px;
-
+    margin: 13px;
+  
     .inputIMG {
       width: 400px;
     }
 
     input {
       width: 200px;
+      border:none;
+      border-bottom: 2px solid white;
+      background: none;
+      outline: none; 
+      color: ${allColors.mainColor};
+      font-size: 15px;
+      text-align: center;
     }
+
+    h3{
+      margin-bottom: 5px;
+    }
+    
   }
   .barrasContainer {
     display: grid;
@@ -121,14 +133,16 @@ export const StyledRange = styled.input`
     #fff ${(props.value * 100)/(props.max)}%, 
     #fff 100%);`};
   box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  margin: 8px;
 
   ::-webkit-slider-thumb {
     -webkit-appearance: none;
-    width: 20px;
-    height: 20px;
-    background-image: radial-gradient(circle, #f7f7fc 40%, black 45%);
+    width: 23px;
+    height: 23px;
+    //background-image: radial-gradient(circle, #f7f7fc 40%, black 45%);
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg);
     border-radius: 50%;
-    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.5);
+    //box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.5);
   }
 `;
 

@@ -7,6 +7,7 @@ import { getAllTypes, postPokemon } from "../../Redux/Actions/index.js";
 
 function validate(input) {
   let errors = {};
+
   if (!input.name) {
     errors.name = "A name is required";
   } else if (!/^[a-zA-Z]+$/.test(input.name) || input.name.length > 10) {
@@ -21,19 +22,14 @@ function validate(input) {
 
   if (!input.weight) {
     errors.weight = "height is required";
-  } else if (input.weight > 1000) {
+  } else if (input.weight > 2000) {
     errors.weight = "weight is invalid";
   }
 
   if (!input.img) {
     errors.img = "an img url is required";
-  } else if (
-    !/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/.test(
-      input.img
-    )
-  ) {
-    errors.img = "url is invalid";
-  }
+  } else if (!/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/.test(input.img)
+) {errors.img = "url is invalid";}
 
   return errors;
 }
@@ -59,6 +55,7 @@ export default function CreatePokemon() {
     img: "",
     type: [],
   });
+ 
 
   const [errors, setErrors] = useState({});
 
@@ -89,8 +86,8 @@ export default function CreatePokemon() {
   const handleSelect = (e) => {
     setInput({
       ...input,
-      type: [...input.type, e.target.value],
-      //type : input.type.length < 2 ? [...input.type, e.target.value] : input.type
+      //type: [...input.type, e.target.value],
+      type : input.type.length < 2 ? [...input.type, e.target.value] : input.type
     });
   };
 
@@ -146,6 +143,7 @@ export default function CreatePokemon() {
           </div>
           {errors.name && <p className="error">{errors.name}</p>}
         </div>
+        
         <div className="barrasContainer">
           <div>
             <label>Life: </label>
@@ -266,6 +264,7 @@ export default function CreatePokemon() {
             </div>
           ))}
           </div>
+          {errors.type && <p className="error">{errors.type}</p>}
         </div>
         <button
           type="submit"

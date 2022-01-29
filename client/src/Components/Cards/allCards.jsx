@@ -17,7 +17,6 @@ export default function AllCards({pokemonsXpage, allPokemons, paginado, currentP
         currentPage={currentPage}
         setCurrentPAge={setCurrentPAge}
       />
-      <h3>{`page n° ${currentPage}`}</h3>
       <StyledCards>
         {currentPokemons?.map((el) => {
           return (

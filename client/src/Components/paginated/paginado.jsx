@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledNavPage, StyledButton } from "./StyledPaginado.jsx";
+import { StyledNavPage} from "./StyledPaginado.jsx";
 
 export default function Paginado({
   pokemonsXpage,
@@ -16,31 +16,25 @@ export default function Paginado({
   }
 
   return (
-    <StyledNavPage currentPage={currentPage}>
-      <h2>pages</h2>
+    <StyledNavPage>
       <ul className="paginado">
-        <StyledButton
+        <button 
           onClick={() =>
             setCurrentPAge(currentPage === 1 ? currentPage : currentPage - 1)
-          }>Prev</StyledButton>
+          }>Prev</button>
         {pageNumber?.map((number) => (
           <button
-            className="B1"
+            className={`B${number}`}
             key={number}
             onClick={() => paginado(number)}
           >
             {number}
           </button>
         ))}
-        <StyledButton
+        <button
           onClick={() =>
-            setCurrentPAge(
-              currentPage === maxPages ? currentPage : currentPage + 1
-            )
-          }
-        >
-          Prev
-        </StyledButton>
+            setCurrentPAge(currentPage === maxPages ? currentPage : currentPage + 1)}
+        > Next </button>
       </ul>
     </StyledNavPage>
   );

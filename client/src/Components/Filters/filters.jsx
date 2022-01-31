@@ -13,9 +13,9 @@ export default function Filters({allTypes, handleReset, handleOrigin, handleSort
       <div className="filters">
 
         <label>by alphabetical order</label>
-        <select onChange={(e) => handleSortByABC(e)}>
+        <select onChange={(e) => handleSortByABC(e)} id="sortABC">
         {/* <option selected disabled>alfabetical</option> */}
-          <option value="NONE">none</option>
+          <option value="NONE">None</option>
           <option value="ASC">A to Z</option>
           <option value="DESC">Z to A</option>
         </select>

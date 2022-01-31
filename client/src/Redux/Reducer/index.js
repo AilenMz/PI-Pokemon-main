@@ -45,17 +45,16 @@ const rootReducer = (state = initialState, action) => {
         pokemonDetails: action.payload
       }
     case SORT_BY_STRENGTH:
-      const all = state.pokemonsBack;
-      let sortSTR =
-        action.payload === "asc"
-          ? state.pokemons.sort((a, b) => a.attack - b.attack)
-          : state.pokemons.sort((a, b) => b.attack - a.attack);
+      const all = [...state.pokemonsBack];
+      let sortSTR = action.payload === 'asc'
+          ? all.sort((a, b) => a.attack - b.attack)
+          : all.sort((a, b) => b.attack - a.attack);
       return {
         ...state,
-        pokemons: action.payload === "none" ? all : sortSTR,
+        pokemons: sortSTR,
       };
     case FILTER_BY_ORIGIN:
-      const allPokemons = state.pokemonsBack;
+      const allPokemons = [...state.pokemonsBack];
       const constFilter =
         action.payload === "database"
           ? allPokemons.filter((el) => el.createdInDb)
@@ -78,14 +77,8 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         pokemons: typeFilter,
       };
-    // case SORT_BY_ABC:
-    //     return {
-    //         ...state,
-    //         pokemons: action.payload
-    //     }
     case SORT_BY_ABC:
-      const allPokemons3 = state.pokemonsBack;
-      const allP = state.pokemons
+      const allP = [...state.pokemonsBack]
       let sorted =
         action.payload === "ASC"
           ? allP.sort(function (a, b) {
@@ -111,8 +104,13 @@ const rootReducer = (state = initialState, action) => {
 
       return {
         ...state,
-        pokemons: action.payload === 'NONE' ? allPokemons3 : sorted,
+        pokemons: sorted,
       };
+       // case SORT_BY_ABC:
+    //     return {
+    //         ...state,
+    //         pokemons: action.payload
+    //     }
     default:
       return state;
   }

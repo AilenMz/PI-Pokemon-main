@@ -36,12 +36,18 @@ export default function Home() {
   }, [dispatch]);
 
   const handleOrigin = (e) => {
-    dispatch(filterByOrigin(e.target.value))
+    e.preventDefault()
+    e.target.value === 'all' 
+    ? dispatch(getAllPokemons())
+    : dispatch(filterByOrigin(e.target.value))
+    setCurrentPAge(1)
   }
 
   const handleSortBySTR = (e) => {
     e.preventDefault()
-    dispatch(sortByStrength(e.target.value))
+    e.target.value === 'none' 
+    ? dispatch(getAllPokemons()) 
+    : dispatch(sortByStrength(e.target.value))
     setCurrentPAge(1)
     setOrden(`Ordenado ${e.target.value}`)
   }
@@ -52,14 +58,19 @@ export default function Home() {
 
   const handleSortByABC = (e) => {
     e.preventDefault()
-    dispatch(sortByABC(e.target.value))
+    e.target.value === 'NONE' 
+    ? dispatch(getAllPokemons())
+    : dispatch(sortByABC(e.target.value))
     setCurrentPAge(1)
     setOrden(`Ordenado ${e.target.value}`)
   }
 
   function handleReset(e){
     e.preventDefault()
-    dispatch(getAllPokemons())
+    window.location.reload()
+    // dispatch(getAllPokemons())
+    // let sortABC = document.getElementById('sortABC')
+    // sortABC.selectedIndex =0
   }
 
 

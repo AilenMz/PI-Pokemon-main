@@ -240,7 +240,7 @@ export default function CreatePokemon() {
           className="finalButton"
           type="submit"
           disabled={
-            !input.name || errors.name || errors.height || errors.weight || errors.img
+            !input.name || !input.type[0]|| errors.name || errors.height || errors.weight || errors.img
               ? true
               : false
           }> Create Pokemon

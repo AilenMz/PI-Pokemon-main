@@ -30,30 +30,40 @@ export default function Detail(props) {
               <h4>ID: {pokeDetail.id}</h4>
               <h3>TYPE: </h3>
               <div className="types">
-                {pokeDetail.type.map((subtype) => {
-                  return (
-                    <div>
-                      <p key={subtype}>
-                        {subtype.charAt(0).toUpperCase() + subtype.slice(1)}
-                      </p>
-                      <img
-                        src={allTypesIMG[subtype]}
-                        alt=""
-                      />
-                    </div>
-                  );
-                })}
+                {pokeDetail.type
+                  ? pokeDetail.type.map((subtype) => {
+                      return (
+                        <div>
+                          <p key={subtype}>
+                            {subtype.charAt(0).toUpperCase() + subtype.slice(1)}
+                          </p>
+                          <img src={allTypesIMG[subtype]} alt="" />
+                        </div>
+                      );
+                    })
+                  : pokeDetail.types.map((subtype) => {
+                      return (
+                        <div>
+                          <p key={subtype.name}>
+                            {subtype.name.charAt(0).toUpperCase() +
+                              subtype.name.slice(1)}
+                          </p>
+                          <img src={allTypesIMG[subtype.name]} alt="" />
+                        </div>
+                      );
+                    })}
               </div>
               <h5>HP: {pokeDetail.hp}</h5>
               <h5>ATTACK: {pokeDetail.attack}</h5>
               <h5>DEFENSE: {pokeDetail.defense}</h5>
               <h5>SPEED: {pokeDetail.speed}</h5>
-              <h5>HEIGHT: {pokeDetail.height}</h5>
-              <h5>WEIGHT: {pokeDetail.weight}</h5>
+              <h5>HEIGHT: {pokeDetail.height} cm</h5>
+              <h5>WEIGHT: {Math.round(pokeDetail.weight)} kg</h5>
             </div>
             <div>
               <h1>
-                {pokeDetail.name.charAt(0).toUpperCase() + pokeDetail.name.slice(1)}
+                {pokeDetail.name.charAt(0).toUpperCase() +
+                  pokeDetail.name.slice(1)}
               </h1>
             </div>
           </div>

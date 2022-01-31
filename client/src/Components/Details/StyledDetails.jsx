@@ -54,27 +54,27 @@ const StyledDetails = styled.div`
           color: white;
         }
       }
-      .data3{
-          margin-left: 50px;
-          
-          h3{
-              font-size: 20px;
-              margin: 0px
-          }
+      .data3 {
+        margin-left: 50px;
 
-          h4{
-              font-size: 20px;
-          }
+        h3 {
+          font-size: 20px;
+          margin: 0px;
+        }
 
-          .types{
-              display: grid;
-              grid-template-columns: auto auto;
-              justify-content: start;
+        h4 {
+          font-size: 20px;
+        }
 
-              img{
-                  width: 20px;
-              }
+        .types {
+          display: grid;
+          grid-template-columns: auto auto;
+          justify-content: start;
+
+          img {
+            width: 25px;
           }
+        }
       }
     }
   }

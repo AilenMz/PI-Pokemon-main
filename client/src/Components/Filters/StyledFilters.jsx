@@ -4,13 +4,15 @@ import allColors from '../../colorsPalette/colors.js'
 export const StyledFilter = styled.div`
     width: auto;
     max-height: 450px;
-    margin-top: 70px;
+    margin-top: 80px;
     margin-right: 5px;
     background-color: ${allColors.colors[0]};
     padding: 30px;
     border-radius: 10px;
     color: white;
     font-size: 25px;
+    position: sticky;
+    top:70px;
     
     .filters{
         display: flex;

@@ -2,7 +2,7 @@ const { Pokemon, Types, conn } = require('../../src/db.js');
 const { expect } = require('chai');
 
 
-xdescribe('Pokemon model', () => {
+describe('Pokemon model', () => {
   before(() => conn.authenticate()
     .catch((err) => {
       console.error('Unable to connect to the database:', err);

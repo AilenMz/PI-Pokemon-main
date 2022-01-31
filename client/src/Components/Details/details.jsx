@@ -1,18 +1,17 @@
 import React, {useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux'
+import {useDispatch, useSelector} from 'react-redux'
 import {getDetail} from '../../Redux/Actions/index.js'
 
 export default function Detail(props){
-   
+
     const dispatch = useDispatch()
 
     useEffect(()=>{
         dispatch(getDetail(props.match.params.id))
-    },[dispatch,props.match.params.id])
+        return(()=>dispatch(getDetail('a')))
+    },[])
 
     const pokeDetail = useSelector((state) => state.pokemonDetails)
-    console.log(pokeDetail)
-
 
  return(
     <div>
@@ -30,8 +29,6 @@ export default function Detail(props){
                     <h5>Height: {pokeDetail.height}</h5>
                     <h5>Weight: {pokeDetail.weight}</h5>
                     <img src={pokeDetail.img} alt="" />
-
-
 
             </>
         : <p>Loading...</p>

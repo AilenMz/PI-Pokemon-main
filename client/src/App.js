@@ -4,7 +4,6 @@ import LangindPage from './Components/LandingPage/landingPage.jsx'
 import Home from './Components/Home/Home.jsx'
 import CreatePokemon from './Components/CreatePokemon/createPokemon.jsx'
 import Detail from './Components/Details/details.jsx'
-import {useSelector} from 'react';
 
 
 function App() {

@@ -1,44 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import StyledCrate, {StyledRange} from "./StyledCreate.jsx";
+import StyledCrate, { StyledRange } from "./StyledCreate.jsx";
 import StyledNav from "../NavBar/StyledNav.jsx";
 import { Link, useHistory } from "react-router-dom";
 import { getAllTypes, postPokemon } from "../../Redux/Actions/index.js";
-
-function validate(input) {
-  let errors = {};
-
-  if (!input.name) {
-    errors.name = "A name is required";
-  } else if (!/^[a-zA-Z]+$/.test(input.name) || input.name.length > 10) {
-    errors.name = "Username is invalid";
-  }
-
-  if (!input.height) {
-    errors.height = "height is required";
-  } else if (input.height > 200) {
-    errors.height = "height is invalid";
-  }
-
-  if (!input.weight) {
-    errors.weight = "height is required";
-  } else if (input.weight > 2000) {
-    errors.weight = "weight is invalid";
-  }
-
-  if (!input.img) {
-    errors.img = "an img url is required";
-  } else if (!/[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/.test(input.img)
-) {errors.img = "url is invalid";}
-
-  return errors;
-}
+import { validate } from "./validate";
 
 export default function CreatePokemon() {
   const allTypes = useSelector((state) => state.types);
   const dispatch = useDispatch();
-  const history = useHistory();
-
 
   useEffect(() => {
     dispatch(getAllTypes());
@@ -55,7 +25,6 @@ export default function CreatePokemon() {
     img: "",
     type: [],
   });
- 
 
   const [errors, setErrors] = useState({});
 
@@ -87,7 +56,7 @@ export default function CreatePokemon() {
     setInput({
       ...input,
       //type: [...input.type, e.target.value],
-      type : input.type.length < 2 ? [...input.type, e.target.value] : input.type
+      type: input.type.length < 2 ? [...input.type, e.target.value] : input.type,
     });
   };
 
@@ -106,7 +75,6 @@ export default function CreatePokemon() {
       img: "",
       type: [],
     });
-    // history.push('/home')
   };
 
   function handleDeleteX(el) {
@@ -143,7 +111,7 @@ export default function CreatePokemon() {
           </div>
           {errors.name && <p className="error">{errors.name}</p>}
         </div>
-        
+
         <div className="barrasContainer">
           <div>
             <label>Life: </label>
@@ -206,35 +174,37 @@ export default function CreatePokemon() {
             </label>
           </div>
         </div>
-<div className="tam">
-        <div className="tam2">
-          <label>Height: </label>
-          <h6>*cm - max 200cm</h6>
-          <input
-            onChange={handleChange}
-            type="text"
-            value={input.height}
-            name="height"
-          />
-          {errors.height && <p className="error">{errors.height}</p>}
-        </div>
 
-        <div className="tam2">
-          <label>weight: </label>
-          <h6>*kg - max 2000kg</h6>
-          <input
-            onChange={handleChange}
-            type="text"
-            value={input.weight}
-            name="weight"
-          />
-          {errors.weight && <p className="error">{errors.weight}</p>}
+        <div className="tam">
+          <div className="tam2">
+            <label>Height: </label>
+            <h6>*cm - max 200cm</h6>
+            <input
+              onChange={handleChange}
+              type="text"
+              value={input.height}
+              name="height"
+            />
+            {errors.height && <p className="error">{errors.height}</p>}
+          </div>
+
+          <div className="tam2">
+            <label>weight: </label>
+            <h6>*kg - max 2000kg</h6>
+            <input
+              onChange={handleChange}
+              type="text"
+              value={input.weight}
+              name="weight"
+            />
+            {errors.weight && <p className="error">{errors.weight}</p>}
+          </div>
         </div>
-</div>
 
         <div className="inputs">
           <label>Image: </label>
-          <input className="inputIMG"
+          <input
+            className="inputIMG"
             onChange={handleChange}
             type="text"
             value={input.img}
@@ -245,38 +215,42 @@ export default function CreatePokemon() {
 
         <div className="types">
           <div className="type1">
-          <label>Tipo: </label>
-          <select onChange={handleSelect}>
-            {allTypes?.map((el) => (
-              <option value={el.name} key={el.name}>
-                {el.name}
-              </option>
-            ))}
-          </select>
+            <label>Tipo: </label>
+            <select onChange={handleSelect} className="selectType">
+              {allTypes?.map((el) => (
+                <option value={el.name} key={el.name}>
+                  {el.name}
+                </option>
+              ))}
+            </select>
           </div>
           <div className="type2">
-          {input.type.map((el) => (
-            <div key={el}>
-              <button type="button" onClick={() => handleDeleteX(el)}>
-                X
-              </button>
-              <p>{el}</p>
-            </div>
-          ))}
+            {input.type.map((el) => (
+              <div key={el}>
+                <button type="button" onClick={() => handleDeleteX(el)}>
+                  X
+                </button>
+                <p>{el}</p>
+              </div>
+            ))}
           </div>
-          {errors.type && <p className="error">{errors.type}</p>}
         </div>
+
         <button
+          className="finalButton"
           type="submit"
           disabled={
-            errors.name || errors.height || errors.weight || errors.img
+            !input.name || errors.name || errors.height || errors.weight || errors.img
               ? true
               : false
-          }
-        >
-          crear Pokemon
+          }> Create Pokemon
         </button>
-        {msg.length > 0 && <p>{msg}</p>}
+        {msg.length > 0 && (
+          <div className="mensaje">
+            <p>{msg}</p>
+            <Link to="/home">Volver al Home</Link>
+          </div>
+        )}
       </form>
     </StyledCrate>
   );

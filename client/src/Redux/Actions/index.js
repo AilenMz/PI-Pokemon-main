@@ -110,6 +110,9 @@ export const getDetail = (id) => {
         })
         } catch (error) {
             console.log(error)
+            return dispatch({
+                type: GET_DETAIL, payload: {}
+            })
         }
         
     } 

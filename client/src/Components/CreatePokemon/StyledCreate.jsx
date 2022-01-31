@@ -27,6 +27,8 @@ const StyledCrate = styled.div`
     height: 530px;
     color: white;
   }
+  
+
   h1 {
     width: 294px;
     margin-right: 5px;
@@ -79,6 +81,12 @@ const StyledCrate = styled.div`
       width: 50px;
       text-align: center;
       margin-top: 10px;
+      border:none;
+      border-bottom: 2px solid white;
+      background: none;
+      outline: none; 
+      color: ${allColors.mainColor};
+      font-size: 15px;
     }
   }
   .types {
@@ -117,6 +125,33 @@ const StyledCrate = styled.div`
         cursor: pointer;
       }
     }
+  }
+  .finalButton{
+    background: rgba(44, 44, 44, 0.473);
+    border: 2px solid ${allColors.mainColor};
+    color: ${allColors.mainColor};
+    text-align: center;
+    height: 30px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    margin: 10px;
+
+    &:disabled{
+      opacity: 40%;
+    }
+    &:hover{
+        border: 2px solid white;
+        color: white;
+    }
+  }
+  .selectType{
+    background: rgba(44, 44, 44, 0.473);
+    border: 2px solid ${allColors.mainColor};
+    color: ${allColors.mainColor};
+    text-align: center;
+    border-radius: 5px;
   }
 `;
 

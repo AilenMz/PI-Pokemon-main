@@ -5,7 +5,7 @@ const StyledCards = styled.div`
     min-height: 500px;
     display: grid;
     grid-template-columns: auto auto auto auto;
-    border: 1px solid black;
+    //border: 1px solid black;
     justify-content: center;
 `
 

@@ -18,10 +18,11 @@ const StyledCrate = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
     border-radius: 10px;
+    border: 2px solid black;
     background: linear-gradient(
       0deg,
-      rgba(239, 62, 51, 0.7570378493194152) 67%,
-      rgba(21, 43, 98, 0.7766456924566701) 100%
+      rgba(239, 62, 51, 0.70) 67%,
+      rgba(21, 43, 98, 0.70) 100%
     );
     width: 600px;
     height: 530px;

@@ -18,6 +18,7 @@ export default function Home() {
   const [currentPage, setCurrentPAge] = useState(1);
   const [pokemonsXpage] = useState(12);
   const [orden, setOrden] = useState('')
+  //console.log(orden)
 
   let indexLastPokemon = currentPage * pokemonsXpage; //12
   let indexFirstPokemon = indexLastPokemon - pokemonsXpage; //0

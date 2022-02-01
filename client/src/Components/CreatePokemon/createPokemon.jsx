@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import StyledCrate, { StyledRange } from "./StyledCreate.jsx";
 import StyledNav from "../NavBar/StyledNav.jsx";
-import { Link, useHistory } from "react-router-dom";
+import {Link} from "react-router-dom";
 import { getAllTypes, postPokemon } from "../../Redux/Actions/index.js";
 import { validate } from "./validate";
 

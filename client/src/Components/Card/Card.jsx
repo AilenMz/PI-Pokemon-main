@@ -1,6 +1,5 @@
 import React from "react";
 import StyledCard, {StyledLink, StyleNotFound} from "./StyledCard";
-import { Link } from "react-router-dom";
 import allTypesIMG from '../../img/types/typesIMG.js'
 
 export default function Card(props) {
@@ -26,8 +25,8 @@ export default function Card(props) {
           <div className="type">
           {type.map((subtype) => {
             return (
-            <div>
-              <h3 key={subtype}>{subtype.charAt(0).toUpperCase() + subtype.slice(1)}</h3>
+            <div key={subtype}>
+              <h3>{subtype.charAt(0).toUpperCase() + subtype.slice(1)}</h3>
               <img src={allTypesIMG[subtype]} alt="" className="typeIMG"/>
             </div>
             );

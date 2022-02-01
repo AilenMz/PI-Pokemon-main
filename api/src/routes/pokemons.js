@@ -49,7 +49,7 @@ router.post("/pokemons", async (req, res) => {
     type,
   } = req.body;
 
-  const charactedCreated = await Pokemon.create({
+  const pokemonCreated = await Pokemon.create({
     name,
     hp,
     attack,
@@ -64,11 +64,10 @@ router.post("/pokemons", async (req, res) => {
   let typeinDB = await Types.findAll({
     where: { name: type },
   });
-
   // let map = typeinDB.map(e => e.dataValues.name)
   // console.log(map)
 
-  charactedCreated.addType(typeinDB);
+  pokemonCreated.addType(typeinDB);
   res.send("personaje creado con exito");
 });
 

@@ -10,7 +10,7 @@ import LangindPage from '../Components/LandingPage/landingPage.jsx'
 
 configure({ adapter: new Adapter() });
 
-describe('<LangindPage/>', ()=>{
+xdescribe('<LangindPage/>', ()=>{
     let landing
 
     beforeEach(()=>{

@@ -8,6 +8,7 @@ import {
   GET_POKEMON,
   POST_POKEMON,
   GET_DETAIL,
+  CLEAN_DETAIL
 } from "../Actions/index.js";
 
 const initialState = {
@@ -40,6 +41,11 @@ const rootReducer = (state = initialState, action) => {
         ...state,
       };
     case GET_DETAIL:
+      return{
+        ...state,
+        pokemonDetails: action.payload
+      }
+    case CLEAN_DETAIL:
       return{
         ...state,
         pokemonDetails: action.payload

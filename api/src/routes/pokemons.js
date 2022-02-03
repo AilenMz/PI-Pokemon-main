@@ -11,16 +11,46 @@ router.get("/pokemons", async (req, res) => {
   let totalPokemons = await getAllPokemons();
 
   if (name) {
-    let characterName = totalPokemons.filter((e) =>
+    let pokemonName = totalPokemons.filter((e) =>
       e.name.toLowerCase().includes(name.toLowerCase())
     );
-    characterName.length
-      ? res.status(200).send(characterName)
+    pokemonName.length
+      ? res.status(200).send(pokemonName)
       : res.status(404).send("Character Not Found");
   } else {
     res.status(200).send(totalPokemons);
   }
 });
+
+// router.get("/pokemons", async (req, res) => {
+//   const { name } = req.query;
+//   let totalPokemons = await getAllPokemons();
+
+//   if (name) {
+//     let pokemonnName = (await axios(`https://pokeapi.co/api/v2/pokemon/${name}`)).data
+//     let poke = {
+//                     id: pokemonnName.id,
+//                     name: pokemonnName.name,
+//                     hp: pokemonnName.stats[0].base_stat,
+//                     attack: pokemonnName.stats[1].base_stat,
+//                     defense: pokemonnName.stats[2].base_stat,
+//                     speed: pokemonnName.stats[5].base_stat,
+//                     height: pokemonnName.height * 10, //la data viene en decimetros y lo paso a cm
+//                     weight: pokemonnName.weight * 0.1, // la data viene en hectogramos y la paso a kg
+//                     type: pokemonnName.types.map(el => el.type.name),
+//                     img: pokemonnName.sprites.other.dream_world.front_default
+//     }
+//     console.log(poke)
+//     poke.hasOwnProperty('id')
+//       ? res.status(200).send(poke)
+//       : res.status(404).send("Character Not Found");
+//   } else {
+//     res.status(200).send(totalPokemons);
+//   }
+// });
+
+
+
 
 router.get("/pokemons/:id", async (req, res) => {
   const { id } = req.params;

@@ -9,6 +9,7 @@ export const SORT_BY_ABC = 'SORT_BY_ABC'
 export const GET_POKEMON = 'GET_POKEMON'
 export const POST_POKEMON = 'POST_POKEMON'
 export const GET_DETAIL = 'GET_DETAIL'
+export const CLEAN_DETAIL = 'CLEAN_DETAIL'
 export const DELETE_POKEMON = 'DELETE_POKEMON'
 
 
@@ -119,5 +120,28 @@ export const getDetail = (id) => {
     } 
 }
 
+export const cleanDetail = () => {
+    return {
+        type: CLEAN_DETAIL,
+        payload: {}
+    }
+}
+
+// desde front
+// export const deletePokemon = (payload) => {
+//     return {
+//         type: DELETE_POKEMON,
+//         payload
+//     }
+// }
+
+// export const deletePokemon = (id) => {
+//     return async function (dispatch){
+//         let data = await axios.delete(`http://localhost:3001/pokemons/delete?id=${id}`)
+//         return dispatch({
+//             type: DELETE_POKEMON, payload: data.data
+//         })
+//     }
+// }
 
 

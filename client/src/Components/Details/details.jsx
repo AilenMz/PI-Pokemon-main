@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDetail } from "../../Redux/Actions/index.js";
+import { getDetail, cleanDetail } from "../../Redux/Actions/index.js";
 import StyledDetails from "./StyledDetails.jsx";
 import { Link } from "react-router-dom";
 import allTypesIMG from "../../img/types/typesIMG.js";
@@ -10,7 +10,8 @@ export default function Detail(props) {
 
   useEffect(() => {
     dispatch(getDetail(props.match.params.id));
-    return () => dispatch(getDetail("a"));
+    //return () => dispatch(getDetail("a"));
+    return () => dispatch(cleanDetail());
   }, []);
 
   const pokeDetail = useSelector((state) => state.pokemonDetails);

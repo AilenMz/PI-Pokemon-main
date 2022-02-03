@@ -74,7 +74,6 @@ export default function Home() {
     // sortABC.selectedIndex =0
   }
 
-
   return (
     <>
       <NavBar />

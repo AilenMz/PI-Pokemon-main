@@ -27,7 +27,8 @@ export default function AllCards({pokemonsXpage, allPokemons, paginado, currentP
               name={el.name} 
               img={el.img} 
               type={el.type ? el.type : el.types.map(el => el.name)}
-              attack={el.attack} />
+              attack={el.attack}
+            />
           );
         })}
       </StyledCards>

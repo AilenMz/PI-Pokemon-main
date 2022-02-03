@@ -7,7 +7,7 @@ import {
   SORT_BY_ABC,
   GET_POKEMON,
   POST_POKEMON,
-  GET_DETAIL
+  GET_DETAIL,
 } from "../Actions/index.js";
 
 const initialState = {

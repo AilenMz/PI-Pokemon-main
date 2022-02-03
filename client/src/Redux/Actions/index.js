@@ -9,6 +9,7 @@ export const SORT_BY_ABC = 'SORT_BY_ABC'
 export const GET_POKEMON = 'GET_POKEMON'
 export const POST_POKEMON = 'POST_POKEMON'
 export const GET_DETAIL = 'GET_DETAIL'
+export const DELETE_POKEMON = 'DELETE_POKEMON'
 
 
 //---------------------------//
@@ -117,4 +118,6 @@ export const getDetail = (id) => {
         
     } 
 }
-    
+
+
+

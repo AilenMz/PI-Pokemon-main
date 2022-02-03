@@ -3,7 +3,7 @@ import StyledCard, {StyledLink, StyleNotFound} from "./StyledCard";
 import allTypesIMG from '../../img/types/typesIMG.js'
 
 export default function Card(props) {
-  const { name, img, type, attack, id } = props;
+  const { name, img, type, attack, id} = props;
   return (
     <>
       {props.msg ? (

@@ -36,8 +36,8 @@ const StyledCrate = styled.div`
     visibility: hidden;
   }
   .error {
-    color: red;
-    font-size: 10px;
+    color: white;
+    font-size: 11px;
   }
   .inputs {
     display: flex;

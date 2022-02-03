@@ -63,7 +63,7 @@ export default function CreatePokemon() {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(postPokemon(input));
-    setMsg("Pokemon creado con éxito");
+    setMsg("Pokemon has been created");
     setInput({
       name: "",
       hp: 0,
@@ -215,7 +215,7 @@ export default function CreatePokemon() {
 
         <div className="types">
           <div className="type1">
-            <label>Tipo: </label>
+            <label>Type: </label>
             <select onChange={handleSelect} className="selectType">
               {allTypes?.map((el) => (
                 <option value={el.name} key={el.name}>
@@ -248,7 +248,7 @@ export default function CreatePokemon() {
         {msg.length > 0 && (
           <div className="mensaje">
             <p>{msg}</p>
-            <Link to="/home">Volver al Home</Link>
+            <Link to="/home">Go back to Home</Link>
           </div>
         )}
       </form>

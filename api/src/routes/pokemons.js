@@ -101,4 +101,24 @@ router.post("/pokemons", async (req, res) => {
 //   res.send(sorted);
 // });
 
+router.get("/pokemons2", async (req, res) => {
+  const { name } = req.query;
+  let totalPokemons = getAllPokemons()
+    .then((data) => {
+      if (name) {
+        let characterName = data.filter((e) =>
+          e.name.toLowerCase().includes(name.toLowerCase())
+        );
+        characterName.length
+          ? res.status(200).send(characterName)
+          : res.status(404).send("Character Not Found");
+      } else {
+        res.status(200).send(data);
+      }
+    })
+    .catch(error => console.log(error))
+
+});
+
+
 module.exports = router;

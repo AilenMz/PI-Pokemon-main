@@ -45,7 +45,7 @@ export default function Filters({allTypes, handleReset, handleOrigin, handleSort
       </div>
       <button onClick={(e)=>handleReset(e)}>Reset</button>
       <hr />
-      <Link to="/pokemon" className="link">CREAR POKEMON</Link>
+      <Link to="/pokemon" className="link">CREATE POKEMON</Link>
     </StyledFilter>
   );
 }

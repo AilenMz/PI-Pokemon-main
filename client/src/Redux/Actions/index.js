@@ -22,13 +22,13 @@ export const getAllPokemons = () => {
     } 
 }
 
-// ver como hacer con promesa
+//con promesa
 
 // export function getAllPokemons() {
 //     return function(dispatch) {
 //       return axios(`http://localhost:3001/pokemons`)
 //         .then(json => {
-//           dispatch({ type: GET_ALL_POKEMONS, payload: json });
+//           dispatch({ type: GET_ALL_POKEMONS, payload: json.data });
 //         });
 //     };
 //   }
@@ -41,6 +41,7 @@ export const getAllTypes = () => {
         })
     } 
 }
+
 
 export const sortByStrength = (payload) => {
     return {

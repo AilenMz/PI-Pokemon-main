@@ -4,7 +4,7 @@ export const validate = (input) =>{
   if (!input.name) {
     errors.name = "A name is required";
   } else if (!/^[a-zA-Z]+$/.test(input.name) || input.name.length > 10) {
-    errors.name = "Username is invalid";
+    errors.name = "Name is invalid";
   }
 
   if (!input.height) {
@@ -14,7 +14,7 @@ export const validate = (input) =>{
   }
 
   if (!input.weight) {
-    errors.weight = "height is required";
+    errors.weight = "weight is required";
   } else if (input.weight > 2000) {
     errors.weight = "weight is invalid";
   }

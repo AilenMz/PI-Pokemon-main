@@ -38,17 +38,13 @@ export default function Home() {
 
   const handleOrigin = (e) => {
     e.preventDefault()
-    e.target.value === 'all' 
-    ? dispatch(getAllPokemons())
-    : dispatch(filterByOrigin(e.target.value))
+    dispatch(filterByOrigin(e.target.value))
     setCurrentPAge(1)
   }
 
   const handleSortBySTR = (e) => {
     e.preventDefault()
-    e.target.value === 'none' 
-    ? dispatch(getAllPokemons()) 
-    : dispatch(sortByStrength(e.target.value))
+    dispatch(sortByStrength(e.target.value))
     setCurrentPAge(1)
     setOrden(`Ordenado ${e.target.value}`)
   }
@@ -59,9 +55,7 @@ export default function Home() {
 
   const handleSortByABC = (e) => {
     e.preventDefault()
-    e.target.value === 'NONE' 
-    ? dispatch(getAllPokemons())
-    : dispatch(sortByABC(e.target.value))
+    dispatch(sortByABC(e.target.value))
     setCurrentPAge(1)
     setOrden(`Ordenado ${e.target.value}`)
   }

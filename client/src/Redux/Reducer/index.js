@@ -51,7 +51,7 @@ const rootReducer = (state = initialState, action) => {
         pokemonDetails: action.payload
       }
     case SORT_BY_STRENGTH:
-      const all = state.pokemonsBack;
+      const all = state.pokemons;
       let sortSTR = action.payload === 'asc'
           ? all.sort((a, b) => a.attack - b.attack)
           : all.sort((a, b) => b.attack - a.attack);
@@ -83,7 +83,7 @@ const rootReducer = (state = initialState, action) => {
         pokemons: typeFilter,
       };
     case SORT_BY_ABC:
-      const allP = state.pokemonsBack
+      const allP = state.pokemons
       let sorted =
         action.payload === "ASC"
           ? allP.sort(function (a, b) {

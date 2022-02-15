@@ -6,6 +6,7 @@ import StyledForm from './StyledSearch.jsx'
 export default function SearchBar(){
 
     const [name, setName] = useState()
+
     const dispatch = useDispatch()
 
     const handleImputChange = (e) =>{
@@ -25,7 +26,8 @@ export default function SearchBar(){
             type="text"
             placeholder='Ej: Pikachu' 
             value={name}
-            onChange={(e)=>{handleImputChange(e)}}/>
+            onChange={(e)=>{handleImputChange(e)}}
+            />
              <button type='submit'>search</button>
         </StyledForm>
     )

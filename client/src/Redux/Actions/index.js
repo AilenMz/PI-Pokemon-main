@@ -17,7 +17,7 @@ export const DELETE_POKEMON = 'DELETE_POKEMON'
 
 export const getAllPokemons = () => {
     return async function (dispatch) {
-        let json = await axios(`http://localhost:3001/pokemons`)
+        let json = await axios(`https://pokemon-api-ailen.herokuapp.com/pokemons`)
         return dispatch({
             type: GET_ALL_POKEMONS, payload: json.data
         })
@@ -37,7 +37,7 @@ export const getAllPokemons = () => {
 
 export const getAllTypes = () => {
     return async function (dispatch) {
-        let json = await axios(`http://localhost:3001/types`)
+        let json = await axios(`https://pokemon-api-ailen.herokuapp.com/types`)
         return dispatch({
             type: GET_ALL_TYPES, payload: json.data
         })
@@ -84,7 +84,7 @@ export const sortByABC = (payload) => {
 export const getPokemon = (name) => {
     return async function (dispatch) {
         try {
-            let json = await axios(`http://localhost:3001/pokemons?name=${name}`)
+            let json = await axios(`https://pokemon-api-ailen.herokuapp.com/pokemons?name=${name}`)
             return dispatch({
             type: GET_POKEMON, payload: json.data
         })
@@ -98,7 +98,7 @@ export const getPokemon = (name) => {
 }
 export const postPokemon = (payload) => {
     return async function (dispatch) {
-        let response = await axios.post(`http://localhost:3001/pokemons`, payload)
+        let response = await axios.post(`https://pokemon-api-ailen.herokuapp.com/pokemons`, payload)
         return response
     } 
 }
@@ -106,7 +106,7 @@ export const postPokemon = (payload) => {
 export const getDetail = (id) => {
     return async function (dispatch) {
         try {
-            let json = await axios(`http://localhost:3001/pokemons/${id}`)
+            let json = await axios(`https://pokemon-api-ailen.herokuapp.com/${id}`)
         return dispatch({
             type: GET_DETAIL, payload: json.data
         })

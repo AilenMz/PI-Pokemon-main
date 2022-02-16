@@ -106,7 +106,7 @@ export const postPokemon = (payload) => {
 export const getDetail = (id) => {
     return async function (dispatch) {
         try {
-            let json = await axios(`https://pokemon-api-ailen.herokuapp.com/${id}`)
+            let json = await axios(`https://pokemon-api-ailen.herokuapp.com/pokemons/${id}`)
         return dispatch({
             type: GET_DETAIL, payload: json.data
         })

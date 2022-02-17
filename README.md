@@ -20,6 +20,11 @@ La idea general es crear una aplicación en la cual se puedan ver los distintos 
   - Filtrarlos / Ordenarlos
   - Crear nuevos pokemons
 
+
+### Deploy
+
+[Link](https://pi-pokemon-main.vercel.app/)
+
 ## Objetivos del Proyecto
 
 - Construir una App utlizando React, Redux, Node y Sequelize.

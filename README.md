@@ -10,7 +10,7 @@
 
 ### Funcionamiento Final:
 
-![ejemplo](https://github.com/AilenMz/PI-Pokemon-main/blob/main/gif/bloggif_620e4b6a18665.gif
+![ejemplo](/gif/bloggif_620e4b6a18665.gif)
 
 ## Enunciado
 

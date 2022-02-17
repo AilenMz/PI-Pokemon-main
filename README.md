@@ -8,6 +8,10 @@
   <img height="150" src="./pokemon.png" />
 </p>
 
+### Funcionamiento Final:
+
+![ejemplo](https://github.com/AilenMz/PI-Pokemon-main/blob/main/gif/bloggif_620e4b6a18665.gif
+
 ## Enunciado
 
 La idea general es crear una aplicación en la cual se puedan ver los distintos Pokemon utilizando la api externa [pokeapi](https://pokeapi.co/) y a partir de ella poder, entre otras cosas:
